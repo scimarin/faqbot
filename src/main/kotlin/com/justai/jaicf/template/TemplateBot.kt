@@ -11,7 +11,8 @@ import com.justai.jaicf.template.scenario.MainScenario
 import com.mongodb.MongoClient
 import com.mongodb.MongoClientURI
 
-private val rasaApi = RasaApi(System.getenv("RASA_URL") ?: "http://localhost:5005")
+private val rasaApi = RasaApi("https://hivemind2020bot.herokuapp.com/" ?: "http://localhost:5005")
+private val localRasaApi = RasaApi("http://localhost:5005")
 
 private val contextManager = System.getenv("MONGODB_URI")?.let { url ->
     val uri = MongoClientURI(url)
