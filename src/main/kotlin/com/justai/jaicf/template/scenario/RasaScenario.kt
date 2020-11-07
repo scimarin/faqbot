@@ -14,6 +14,14 @@ object RasaScenario: Scenario() {
                 reactions.goBack()
             }
         }
+        state ("name") {
+            activators {
+                intent("name")
+            }
+            action {
+                reactions.say("Nice to meet you! What's you current position?")
+            }
+        }
         state("greet") {
             activators {
                 intent("greet")
