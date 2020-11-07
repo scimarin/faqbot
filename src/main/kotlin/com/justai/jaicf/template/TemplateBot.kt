@@ -8,6 +8,7 @@ import com.justai.jaicf.activator.regex.RegexActivator
 import com.justai.jaicf.context.manager.InMemoryBotContextManager
 import com.justai.jaicf.context.manager.mongo.MongoBotContextManager
 import com.justai.jaicf.template.scenario.MainScenario
+import com.justai.jaicf.template.scenario.RasaScenario
 import com.mongodb.MongoClient
 import com.mongodb.MongoClientURI
 
@@ -22,7 +23,7 @@ private val contextManager = System.getenv("MONGODB_URI")?.let { url ->
 } ?: InMemoryBotContextManager
 
 val templateBot = BotEngine(
-    model = MainScenario.model,
+    model = RasaScenario.model,
     defaultContextManager = contextManager,
     activators = arrayOf(
         RasaIntentActivator.Factory(herokuRasaApi),

@@ -1,5 +1,6 @@
 package com.justai.jaicf.template.scenario
 
+import com.justai.jaicf.activator.rasa.rasa
 import com.justai.jaicf.channel.telegram.telegram
 import com.justai.jaicf.model.scenario.Scenario
 
@@ -8,6 +9,15 @@ object MainScenario: Scenario(
 ) {
 
     init {
+        state("launch") {
+            activators {
+                intent("greet")
+            }
+            action {
+                print("HERE")
+
+            }
+        }
         state("main") {
             activators {
                 intent("greet")
