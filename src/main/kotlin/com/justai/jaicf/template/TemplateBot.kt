@@ -26,7 +26,7 @@ val templateBot = BotEngine(
     model = RasaScenario.model,
     defaultContextManager = contextManager,
     activators = arrayOf(
-        RasaIntentActivator.Factory(herokuRasaApi),
+        RasaIntentActivator.Factory(rasaApi),
         RegexActivator,
         CatchAllActivator
     )
